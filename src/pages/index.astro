@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="3DCG Portfolio">
+  <main>
+    <h1>My 3DCG Works</h1>
+    <div class="gallery">
+      <Card 
+        title="Neo-Tokyo Dreams" 
+        body="Cyberpunk cityscape with neon lights and rain effects"
+        href="/work1"
+        image="https://picsum.photos/600/400?grayscale&blur=2"
+      />
+      <Card 
+        title="Fashion Forward" 
+        body="High-fashion model in avant-garde outfit with dynamic lighting"
+        href="/work2"
+        image="https://picsum.photos/600/400?grayscale"
+      />
+      <Card 
+        title="Urban Decay" 
+        body="Gritty urban environment with graffiti and broken textures"
+        href="/work3"
+        image="https://picsum.photos/600/400?grayscale&blur=1"
+      />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
+    animation: textGlitch 3s infinite;
+  }
+  
+  @keyframes textGlitch {
+    0% { transform: translate(0); }
+    2% { transform: translate(-2px, 2px); }
+    4% { transform: translate(2px, -2px); }
+    6% { transform: translate(-2px, 2px); }
+    8% { transform: translate(2px, -2px); }
+    10% { transform: translate(0); }
+    100% { transform: translate(0); }
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

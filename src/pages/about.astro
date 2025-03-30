@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Me">
+  <main>
+    <h1>About Me</h1>
+    <div class="about-content">
+      <div class="bio">
+        <h2>3D Artist & Designer</h2>
+        <p>
+          I'm a passionate 3D artist specializing in Blender and other 3D tools. 
+          With over 5 years of experience, I create stunning visualizations, 
+          character designs, and environments for various projects.
+        </p>
+        <h3>Skills</h3>
+        <ul>
+          <li>3D Modeling & Texturing</li>
+          <li>Lighting & Rendering</li>
+          <li>Animation & Rigging</li>
+          <li>Visual Effects</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .bio h2 {
+    margin-bottom: 1rem;
+    color: rgb(var(--accent-light));
+  }
+  
+  .bio p {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .bio h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .bio ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bio li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+  
+  .bio li::before {
+    content: "â¡";
+    position: absolute;
+    left: 0;
+    color: rgb(var(--accent-light));
+  }
+</style>

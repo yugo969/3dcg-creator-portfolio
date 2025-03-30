@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 255, 255, 255;
+		--accent-light: 200, 200, 200;
+		--accent-dark: 50, 50, 50;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #000;
+		background-image: radial-gradient(circle at 1px 1px, #333 1px, transparent 0);
+		background-size: 40px 40px;
+	}
+	body {
+		position: relative;
+		overflow: hidden;
+	}
+	body::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, transparent 75%, rgba(255,255,255,0.1) 100%);
+		pointer-events: none;
+		animation: glitch 5s infinite;
+	}
+	@keyframes glitch {
+		0% { transform: translate(0); }
+		20% { transform: translate(-2px, 2px); }
+		40% { transform: translate(2px, -2px); }
+		60% { transform: translate(-2px, 2px); }
+		80% { transform: translate(2px, -2px); }
+		100% { transform: translate(0); }
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

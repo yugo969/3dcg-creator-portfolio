@@ -1,0 +1,6 @@
+Initial project setup with Astro
+Added basic pages (index, about, contact)
+Created Card component
+Added stylish dummy images
+Fixed README encoding issues
+Created .gitignore file
