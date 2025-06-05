@@ -1,12 +1,9 @@
 ---
-import Header from '../components/Header.astro';
-
 interface Props {
-        title: string;
-        current: string;
+	title: string;
 }
 
-const { title, current } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,15 +16,11 @@ const { title, current } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-        <body>
-                <Header current={current} />
-                <div class="page">
-                        <slot />
-                </div>
-        </body>
+	<body>
+		<slot />
+	</body>
 </html>
 <style is:global>
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
 	:root {
 		--accent: 255, 255, 255;
 		--accent-light: 200, 200, 200;
@@ -39,21 +32,16 @@ const { title, current } = Astro.props;
 			white 60%
 		);
 	}
-        html {
-                font-family: 'Inter', system-ui, sans-serif;
-                background: #000;
-                background-image: radial-gradient(circle at 1px 1px, #333 1px, transparent 0);
-                background-size: 40px 40px;
-        }
-        body {
-                position: relative;
-                overflow: hidden;
-                margin: 0;
-        }
-
-        .page {
-                padding-top: 4rem;
-        }
+	html {
+		font-family: system-ui, sans-serif;
+		background: #000;
+		background-image: radial-gradient(circle at 1px 1px, #333 1px, transparent 0);
+		background-size: 40px 40px;
+	}
+	body {
+		position: relative;
+		overflow: hidden;
+	}
 	body::before {
 		content: '';
 		position: absolute;
