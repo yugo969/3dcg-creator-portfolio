@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About Me">
+<Layout title="About Me" current="about">
   <main>
     <h1>About Me</h1>
     <div class="about-content">
@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
   }
   
   .bio li::before {
-    content: "â¡";
+    content: "•";
     position: absolute;
     left: 0;
     color: rgb(var(--accent-light));

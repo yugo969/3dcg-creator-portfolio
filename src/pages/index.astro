@@ -1,29 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<Layout title="3DCG Portfolio">
+<Layout title="3DCG Portfolio" current="home">
+  <Hero
+    title="Digital Dreams"
+    subtitle="Exploring 3D art in a cyber world"
+    image="/images/cyberpunk.jpg"
+  />
   <main>
     <h1>My 3DCG Works</h1>
     <div class="gallery">
-      <Card 
-        title="Neo-Tokyo Dreams" 
+      <Card
+        title="Neo-Tokyo Dreams"
         body="Cyberpunk cityscape with neon lights and rain effects"
         href="/work1"
-        image="https://picsum.photos/600/400?grayscale&blur=2"
+        image="/images/cyberpunk.jpg"
       />
-      <Card 
-        title="Fashion Forward" 
+      <Card
+        title="Fashion Forward"
         body="High-fashion model in avant-garde outfit with dynamic lighting"
         href="/work2"
-        image="https://picsum.photos/600/400?grayscale"
+        image="/images/fashion.jpg"
       />
-      <Card 
-        title="Urban Decay" 
+      <Card
+        title="Urban Decay"
         body="Gritty urban environment with graffiti and broken textures"
         href="/work3"
-        image="https://picsum.photos/600/400?grayscale&blur=1"
+        image="/images/urban.jpg"
       />
     </div>
   </main>
